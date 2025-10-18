@@ -4,11 +4,54 @@ from pybliometrics.superclasses import Retrieval
 from pybliometrics.utils import check_parameter_value, VIEWS
 
 
+class Affiliation(NamedTuple):
+    id: int | None
+    parent: int | None
+    type: str | None
+    relationship: str | None
+    afdispname: str | None
+    preferred_name: str | None
+    parent_preferred_name: str | None
+    country_code: str | None
+    country: str | None
+    address_part: str | None
+    city: str | None
+    state: str | None
+    postal_code: str | None
+    org_domain: str | None
+    org_URL: str | None
+
+
+class Variant(NamedTuple):
+    indexed_name: str | None
+    initials: str | None
+    surname: str | None
+    given_name: str | None
+    doc_count: int | None
+
+
+class Subjectarea(NamedTuple):
+    area: str
+    abbreviation: str
+    code: int
+
+
+class Coauthor(NamedTuple):
+    surname: str
+    given_name: str | None
+    id: int
+    areas: str
+    affiliation_id: str | None
+    name: str | None
+    city: str | None
+    country: str | None
+
+
 class AuthorRetrieval(Retrieval):
 
     def __init__(self,
-                 author_id: Union[int, str],
-                 refresh: Union[bool, int] = False,
+                 author_id: int | str,
+                 refresh: bool | int = False,
                  view: str = "ENHANCED",
                  **kwds: str
                  ) -> None:

@@ -1,6 +1,7 @@
 """Tests for `scopus.AuthorRetrieval` module."""
 
 from pybliometrics.scopus import AuthorRetrieval, init
+from pybliometrics.scopus.author_retrieval import Affiliation, Coauthor
 
 init()
 

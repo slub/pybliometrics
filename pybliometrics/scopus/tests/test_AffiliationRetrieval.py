@@ -1,6 +1,7 @@
 """Tests for `scopus.AffiliationRetrieval` module."""
 
 from pybliometrics.scopus import AffiliationRetrieval, init
+from pybliometrics.scopus.affiliation_retrieval import Variant
 
 init()
 

@@ -1,6 +1,10 @@
 """Tests for `scopus.AbstractRetrieval` module."""
 
 from pybliometrics.scopus import AbstractRetrieval, init
+from pybliometrics.scopus.abstract_retrieval import (
+    Affiliation, AuthorGroup, Author, Chemical, Contributor, 
+    Correspondence, Funding, ISSN, Reference, Sequencebank, Area
+)
 
 init()
 

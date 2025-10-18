@@ -4,11 +4,16 @@ from pybliometrics.superclasses import Retrieval
 from pybliometrics.utils import check_parameter_value, VIEWS
 
 
+class Variant(NamedTuple):
+    name: str
+    doc_count: int | None
+
+
 class AffiliationRetrieval(Retrieval):
 
     def __init__(self,
-                 aff_id: Union[int, str],
-                 refresh: Union[bool, int] = False,
+                 aff_id: int | str,
+                 refresh: bool | int = False,
                  view: str = "STANDARD",
                  **kwds: str
                  ) -> None:
